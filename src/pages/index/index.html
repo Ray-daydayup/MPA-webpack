@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ray&#39;s Blog</title>
+  </head>
+
+  <body>
+    <%= require("html-loader!@/components/loading.html") %>
+    <!-- 头部导航栏 -->
+    <header class="common-header">
+      <div class="container height-100 clearfix">
+        <div class="row">
+          <div class="col-2 logo">
+            <a href="./index.html">
+              <img src="<%= require('@/assets/logo362x82.png') %>" alt="" />
+            </a>
+          </div>
+          <nav class="col-10 menu">
+            <div class="visible-lg clearfix">
+              <div class="menu-left fl">
+                <a class="current" href="./index.html">首页</a>
+                <a href="./archive.html">归档</a>
+                <a href="./tags.html">标签</a>
+                <a href="./categories.html">分类</a>
+                <a href="./about.html">关于</a>
+              </div>
+              <div class="menu-right fr">
+                <a href="https://github.com/Ray-daydayup/blog" target="_blank">
+                  <i class="iconfont icon-github-fill"></i>
+                </a>
+                <a href="javascript:;">
+                  <i class="iconfont icon-search"></i>
+                </a>
+              </div>
+            </div>
+            <div class="hidden-lg menu-not-lg">
+              <a class="current" href="./index.html">首页</a>
+              <a href="./archive.html">归档</a>
+              <a href="./tags.html">标签</a>
+              <a href="./categories.html">分类</a>
+              <a href="./about.html">关于</a>
+              <a href="https://github.com/Ray-daydayup/blog" target="_blank">
+                <i class="iconfont icon-github-fill"></i>
+              </a>
+              <a href="javascript:;">
+                <i class="iconfont icon-search"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- 主体内容 -->
+    <div id="app" class="container">
+      <!-- 用来当作padding-top -->
+      <div class="row visible-lg" style="height: 80px;"></div>
+      <div class="row visible-md" style="height: 140px;"></div>
+      <div class="row visible-sm" style="height: 125px;"></div>
+      <div class="row">
+        <!-- 左边区域 -->
+        <div id="left-area" class="col-3-slg col-4-md hidden-sm">
+          <div class="card-container">
+            <div class="card-content personal-info">
+              <%=
+              require("html-loader?attributes=false!@/components/person.html")
+              %>
+            </div>
+          </div>
+          <div class="card-container hidden-slg recent-card-flag"></div>
+          <div class="card-container hidden-slg category-card-flag"></div>
+          <div class="card-container hidden-slg tags-card-flag"></div>
+        </div>
+        <!-- 中间文章列表 -->
+        <div id="center-area" class="col-6-slg col-8-md">
+          <article id="articles-flag" class="article-list"></article>
+          <!-- <div class="card-container">
+          <div class="card-content get-more">
+            <a href="#">获取更多</a>
+          </div>
+        </div> -->
+        </div>
+        <div class="col-3-slg col-4-md visible-sm">
+          <div class="card-container">
+            <div class="card-content personal-info">
+              <%=
+              require("html-loader?attributes=false!@/components/person.html")
+              %>
+            </div>
+          </div>
+          <div class="card-container hidden-slg recent-card-flag"></div>
+          <div class="card-container hidden-slg category-card-flag"></div>
+          <div class="card-container hidden-slg tags-card-flag"></div>
+        </div>
+        <!-- 右边区域 -->
+        <div id="right-area" class="col-3-slg visible-slg">
+          <div class="card-container recent-card-flag"></div>
+          <div class="card-container category-card-flag"></div>
+          <div class="card-container tags-card-flag"></div>
+        </div>
+      </div>
+    </div>
+    <%= require("html-loader!@/components/footer.html") %>
+  </body>
+</html>

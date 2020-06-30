@@ -1,0 +1,104 @@
+@main-text-color: #24292e; //大容器的文字颜色
+@other-text-color: #888; //大容器的文字颜色
+@anchor-color: #1f8dc3; //标题锚链接的颜色
+@h1-h2-bdb-color: #eaecef; //h1 h2底边框颜色
+@a-color: #2d75ff; //a链接的颜色
+@a-bdb-color: #dbe2ef;
+.article-list {
+	.card-content.main {
+		padding: 0;
+		overflow: hidden;
+	}
+	.img-box {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		text-align: center;
+		max-height: 4rem;
+		> img {
+			width: 100%;
+		}
+	}
+	.abstract {
+		padding: 0.1rem 0.2rem;
+		background-color: #fff;
+		.note-tips {
+			color: @other-text-color;
+			i {
+				font-size: 0.12rem;
+			}
+			h6 {
+				display: inline;
+			}
+		}
+		.title {
+			display: block;
+			color: @main-text-color;
+			font-size: 0.32rem;
+			margin-bottom: 0.15rem;
+			border: none;
+			&:hover {
+				color: @a-color;
+				border: none;
+			}
+		}
+		.content {
+			text-align: justify;
+		}
+		.category-nav {
+			margin: 0.15rem 0;
+			.level-item {
+				display: inline-block;
+				margin-right: 0.05rem;
+				i {
+					font-size: 0.18rem;
+				}
+				a {
+					font-size: 0.12rem;
+					padding: 0.03rem 0.1rem;
+					border-radius: 0.15rem;
+					color: @main-text-color;
+					border-bottom: none;
+					background-color: #f5f5f5;
+					&:hover {
+						color: @a-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+#tocContainer {
+	#toc {
+		max-height: 80vh;
+		overflow: auto;
+	}
+
+	ul {
+		border-left: 1px solid @other-text-color;
+		list-style: none;
+		li {
+			padding-left: 1em;
+		}
+	}
+	#toc > ul:first-child {
+		border-left: none;
+		> li {
+			padding-left: 0;
+		}
+	}
+	a {
+		font-size: 0.16rem;
+		display: block;
+		padding: 0.03rem 0;
+		color: @main-text-color;
+		border-bottom: none;
+		&:hover,
+		&:active,
+		&:focus {
+			color: @a-color;
+			background-color: #f5f5f5;
+		}
+	}
+}
